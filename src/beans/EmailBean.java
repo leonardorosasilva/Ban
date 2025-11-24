@@ -1,6 +1,6 @@
 package beans;
 
-public class Email {
+public class EmailBean {
     private int idEmail;
     private int idUsuario;
     private String endereco;
