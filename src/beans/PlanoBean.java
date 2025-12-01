@@ -5,7 +5,7 @@ public class PlanoBean {
     private String nome;
     private Double preco;
     private Integer limiteTelas;
-    private Integer periodicidadeDias;
+    private String periodicidade; // "Mensal", "Anual", etc.
 
     public int getIdPlano() {
         return idPlano;
@@ -39,11 +39,11 @@ public class PlanoBean {
         this.limiteTelas = limiteTelas;
     }
 
-    public Integer getPeriodicidadeDias() {
-        return periodicidadeDias;
+    public String getPeriodicidade() {
+        return periodicidade;
     }
 
-    public void setPeriodicidadeDias(Integer periodicidadeDias) {
-        this.periodicidadeDias = periodicidadeDias;
+    public void setPeriodicidade(String periodicidade) {
+        this.periodicidade = periodicidade;
     }
 }

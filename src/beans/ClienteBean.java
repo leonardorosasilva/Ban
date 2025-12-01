@@ -1,6 +1,6 @@
 package beans;
 
-public class ClienteBean {
+public class ClienteBean extends UsuarioBean {
     private int idUsuario;
 
     public int getidUsuario() {

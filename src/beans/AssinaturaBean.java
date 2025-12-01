@@ -6,9 +6,10 @@ public class AssinaturaBean {
     private int idAssinatura;
     private int idUsuario;
     private int idPlano;
+    private Integer duracao; // em dias
     private Date dataInicio;
     private Date dataFim;
-    private String status;
+    private String status; // "Ativo" ou "Desativado"
 
     public int getIdAssinatura() {
         return idAssinatura;
@@ -56,5 +57,13 @@ public class AssinaturaBean {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Integer getDuracao() {
+        return duracao;
+    }
+
+    public void setDuracao(Integer duracao) {
+        this.duracao = duracao;
     }
 }

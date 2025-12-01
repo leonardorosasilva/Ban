@@ -1,8 +1,8 @@
 package beans;
 
-public class AdministradorBean {
+public class AdministradorBean extends UsuarioBean {
     private int idAdministrador;
-    private int idUsuario;
+    private String credencial;
 
     public int getIdAdministrador() {
         return idAdministrador;
@@ -12,11 +12,11 @@ public class AdministradorBean {
         this.idAdministrador = idAdministrador;
     }
 
-    public int getIdUsuario() {
-        return idUsuario;
+    public String getCredencial() {
+        return credencial;
     }
 
-    public void setIdUsuario(int idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setCredencial(String credencial) {
+        this.credencial = credencial;
     }
 }
