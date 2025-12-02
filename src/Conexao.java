@@ -6,7 +6,8 @@ public class Conexao {
     private static final String DRIVER = "org.postgresql.Driver";
     private static final String USER = "postgres";
     private static final String DEFAULT_PASSWORD = "leonard1200.";
-    
+    private static final String URL = "jdbc:postgresql://localhost:5432/banProject";
+
     private Connection connection;
 
     public Conexao() {
@@ -38,14 +39,14 @@ public class Conexao {
             System.err.println("\nERRO ao conectar com o banco de dados!");
             System.err.println("\nPossíveis causas:");
             System.err.println("1. Senha incorreta para o usuário 'postgres'");
-            System.err.println("2. Banco de dados 'streamingBan' não existe");
+            System.err.println("2. Banco de dados 'banProject' não existe");
             System.err.println("3. PostgreSQL não está rodando");
             System.err.println("4. Porta incorreta (padrão: 5432)");
             System.err.println("\nSoluções:");
             System.err.println("- Verifique a senha do PostgreSQL e altere em Conexao.java (linha 10)");
             System.err.println("- Ou defina a variável de ambiente: DB_PASSWORD=sua_senha");
             System.err.println("- Ou execute com: java -Ddb.password=sua_senha Main");
-            System.err.println("- Certifique-se de que o banco 'streamingBan' foi criado");
+            System.err.println("- Certifique-se de que o banco 'banProject' foi criado");
             System.err.println("\nDetalhes do erro:");
             e.printStackTrace();
         }

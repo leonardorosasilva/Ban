@@ -1,6 +1,6 @@
 
 
-CREATE DATABASE pooProject;
+CREATE DATABASE banProject;
 
 CREATE TABLE usuario (
     id_usuario SERIAL PRIMARY KEY,
