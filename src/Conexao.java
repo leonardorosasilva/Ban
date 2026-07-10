@@ -5,7 +5,7 @@ import java.sql.SQLException;
 public class Conexao {
     private static final String DRIVER = "org.postgresql.Driver";
     private static final String USER = "postgres";
-    private static final String DEFAULT_PASSWORD = "leonard1200.";
+    private static final String DEFAULT_PASSWORD = "udesc";
     private static final String URL = "jdbc:postgresql://localhost:5432/banProject";
 
     private Connection connection;

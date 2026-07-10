@@ -69,13 +69,30 @@ public class Main {
         System.out.println("2. Cadastrar como Cliente");
         System.out.println("3. Cadastrar como Administrador");
         System.out.println("0. Sair");
-        System.out.print("Escolha uma opção: ");
-        String input = scanner.nextLine();
+        return readInt("Escolha uma opção: ");
+    }
+
+    private static String readLine(String prompt) {
+        System.out.print(prompt);
+        return scanner.nextLine().trim();
+    }
+
+    private static int readInt(String prompt) {
+        String input = readLine(prompt);
         try {
-            return Integer.parseInt(input.trim());
+            return Integer.parseInt(input);
         } catch (NumberFormatException e) {
             return -1;
         }
+    }
+
+    private static void pressEnterToContinue() {
+        System.out.println("\nPressione Enter para continuar...");
+        scanner.nextLine();
+    }
+
+    private static void invalidOption() {
+        System.out.println("Opção inválida! Tente novamente.");
     }
 
     private static void login() {
@@ -183,13 +200,7 @@ public class Main {
         System.out.println("8. Gerenciar Histórico");
         System.out.println("9. Consultas Especiais");
         System.out.println("0. Logout");
-        System.out.print("Escolha uma opção: ");
-        String input = scanner.nextLine();
-        try {
-            return Integer.parseInt(input.trim());
-        } catch (NumberFormatException e) {
-            return -1;
-        }
+        return readInt("Escolha uma opção: ");
     }
 
     private static void menuUsuario() {
@@ -205,13 +216,7 @@ public class Main {
             System.out.println("5. Atualizar Usuário");
             System.out.println("6. Deletar Usuário");
             System.out.println("0. Voltar");
-            System.out.print("Escolha uma opção: ");
-            String input = scanner.nextLine();
-            try {
-                opcao = Integer.parseInt(input.trim());
-            } catch (NumberFormatException e) {
-                opcao = -1;
-            }
+            opcao = readInt("Escolha uma opção: ");
 
             try {
                 switch (opcao) {
@@ -254,6 +259,7 @@ public class Main {
                         for (UsuarioBean usr : usuarios) {
                             System.out.println("ID: " + usr.getIdUsuario() + " - " + usr.getPrimeiro_nome() + " " + usr.getUltimo_nome());
                         }
+                        pressEnterToContinue();
                         break;
                     case 5:
                         System.out.print("ID do usuário: ");
@@ -299,13 +305,7 @@ public class Main {
             System.out.println("2. Avaliar Conteúdo");
             System.out.println("3. Ver Meu Histórico");
             System.out.println("0. Logout");
-            System.out.print("Escolha uma opção: ");
-            String input = scanner.nextLine();
-            try {
-                opcao = Integer.parseInt(input.trim());
-            } catch (NumberFormatException e) {
-                opcao = -1;
-            }
+            opcao = readInt("Escolha uma opção: ");
 
             try {
                 switch (opcao) {
@@ -314,6 +314,7 @@ public class Main {
                         for (ConteudoBean c : conteudos) {
                             System.out.println("ID: " + c.getIdConteudo() + " - " + c.getTitulo() + " (" + c.getAnoLancamento() + ")");
                         }
+                        pressEnterToContinue();
                         break;
                     case 2:
                         AvaliacaoBean avaliacao = new AvaliacaoBean();
@@ -335,6 +336,7 @@ public class Main {
                         for (HistoricoBean h : historicos) {
                             System.out.println("Conteúdo ID: " + h.getIdConteudo() + " - Progresso: " + h.getProgresso() + "% - Data: " + h.getDataVisualizacao());
                         }
+                        pressEnterToContinue();
                         break;
                     case 0:
                         loggedUser = null;
@@ -362,13 +364,7 @@ public class Main {
             System.out.println("3. Atualizar Cliente");
             System.out.println("4. Deletar Cliente");
             System.out.println("0. Voltar");
-            System.out.print("Escolha uma opção: ");
-            String input = scanner.nextLine();
-            try {
-                opcao = Integer.parseInt(input.trim());
-            } catch (NumberFormatException e) {
-                opcao = -1;
-            }
+            opcao = readInt("Escolha uma opção: ");
 
             try {
                 switch (opcao) {
@@ -401,6 +397,7 @@ public class Main {
                                 System.out.println("ID: " + c.getIdUsuario() + " - " + u.getPrimeiro_nome() + " " + u.getUltimo_nome());
                             }
                         }
+                        pressEnterToContinue();
                         break;
                     case 3:
                         System.out.print("ID do cliente: ");
@@ -488,13 +485,7 @@ public class Main {
             System.out.println("1. Assinaturas com Usuário e Plano (JOIN)");
             System.out.println("2. Conteúdos com Avaliação Acima da Média (Subquery + Agregação)");
             System.out.println("0. Voltar");
-            System.out.print("Escolha uma opção: ");
-            String input = scanner.nextLine();
-            try {
-                opcao = Integer.parseInt(input.trim());
-            } catch (NumberFormatException e) {
-                opcao = -1;
-            }
+            opcao = readInt("Escolha uma opção: ");
 
             try {
                 switch (opcao) {
@@ -525,13 +516,7 @@ public class Main {
             System.out.println("3. Atualizar Administrador");
             System.out.println("4. Deletar Administrador");
             System.out.println("0. Voltar");
-            System.out.print("Escolha uma opção: ");
-            String input = scanner.nextLine();
-            try {
-                opcao = Integer.parseInt(input.trim());
-            } catch (NumberFormatException e) {
-                opcao = -1;
-            }
+            opcao = readInt("Escolha uma opção: ");
 
             try {
                 switch (opcao) {
@@ -607,13 +592,7 @@ public class Main {
             System.out.println("3. Atualizar Plano");
             System.out.println("4. Deletar Plano");
             System.out.println("0. Voltar");
-            System.out.print("Escolha uma opção: ");
-            String input = scanner.nextLine();
-            try {
-                opcao = Integer.parseInt(input.trim());
-            } catch (NumberFormatException e) {
-                opcao = -1;
-            }
+            opcao = readInt("Escolha uma opção: ");
 
             try {
                 switch (opcao) {
@@ -686,13 +665,7 @@ public class Main {
             System.out.println("3. Atualizar Assinatura");
             System.out.println("4. Deletar Assinatura");
             System.out.println("0. Voltar");
-            System.out.print("Escolha uma opção: ");
-            String input = scanner.nextLine();
-            try {
-                opcao = Integer.parseInt(input.trim());
-            } catch (NumberFormatException e) {
-                opcao = -1;
-            }
+            opcao = readInt("Escolha uma opção: ");
 
             try {
                 switch (opcao) {
@@ -772,13 +745,7 @@ public class Main {
             System.out.println("3. Atualizar Conteúdo");
             System.out.println("4. Deletar Conteúdo");
             System.out.println("0. Voltar");
-            System.out.print("Escolha uma opção: ");
-            String input = scanner.nextLine();
-            try {
-                opcao = Integer.parseInt(input.trim());
-            } catch (NumberFormatException e) {
-                opcao = -1;
-            }
+            opcao = readInt("Escolha uma opção: ");
 
             try {
                 switch (opcao) {
@@ -853,13 +820,7 @@ public class Main {
             System.out.println("3. Atualizar Avaliação");
             System.out.println("4. Deletar Avaliação");
             System.out.println("0. Voltar");
-            System.out.print("Escolha uma opção: ");
-            String input = scanner.nextLine();
-            try {
-                opcao = Integer.parseInt(input.trim());
-            } catch (NumberFormatException e) {
-                opcao = -1;
-            }
+            opcao = readInt("Escolha uma opção: ");
 
             try {
                 switch (opcao) {
@@ -930,13 +891,7 @@ public class Main {
             System.out.println("3. Atualizar Visualização");
             System.out.println("4. Deletar Visualização");
             System.out.println("0. Voltar");
-            System.out.print("Escolha uma opção: ");
-            String input = scanner.nextLine();
-            try {
-                opcao = Integer.parseInt(input.trim());
-            } catch (NumberFormatException e) {
-                opcao = -1;
-            }
+            opcao = readInt("Escolha uma opção: ");
 
             try {
                 switch (opcao) {
